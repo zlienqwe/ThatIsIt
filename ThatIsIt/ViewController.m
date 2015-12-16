@@ -9,14 +9,28 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *passwordLabel;
+@property (weak, nonatomic) IBOutlet UITextField *usernameTextfield;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextfield;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.view.backgroundColor = [UIColor redColor];
+
+    NSString *usernameAccessibilityLabel = @"双击输入用户名";
+    NSString *passwordAccessibilityLabel = @"双击输入密码";
+
+    self.usernameLabel.accessibilityFrame = self.usernameTextfield.frame;
+    self.usernameLabel.accessibilityLabel = usernameAccessibilityLabel;
+    self.usernameTextfield.accessibilityLabel = usernameAccessibilityLabel;
+    
+    self.passwordLabel.accessibilityFrame = self.passwordTextfield.frame;
+    self.passwordLabel.accessibilityLabel = passwordAccessibilityLabel;
+    self.passwordTextfield.accessibilityLabel = passwordAccessibilityLabel;
 }
 
 - (void)didReceiveMemoryWarning {
