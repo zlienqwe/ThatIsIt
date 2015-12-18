@@ -29,32 +29,33 @@ static NSString *notRememberPasswordSwitchAccessibilityLabel = @"点击两次不
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor redColor];
+    
+    self.view.backgroundColor = [UIColor grayColor];
 
-    
-    
-    NSString *usernameAccessibilityLabel = @"点击两次屏幕输入用户名";
-    NSString *passwordAccessibilityLabel = @"点击两次屏幕输入密码，输入框右下方有记住密码标志，勾选以后下次就不用输入密码了哦";
+    NSString *usernameTextFieldAccessibilityLabel = @"点击两次屏幕输入用户名";
+    NSString *usernameLabelAccessibilityLabel = @"用户名输入框框在你的右面";
+    NSString *usernameTextFieldAccessibilityHint = @"如果要输入用户名,就点击两侧屏幕";
 
-    NSString *loginButtonAccessibilityLabel = @"点击两次屏幕进行登录";
-    NSString *signupButtonAccessibilityLabel = @"点击两次屏幕进行注册";
-    
+    NSString *passwordTextFeildAccessibilityLabel = @"点击两次屏幕输入密码，输入框框右下方有记住密码开关，勾选以后下次就不用输入密码了哦";
+    NSString *passwordLabelAccessibilityLabel = @"密码输入框框在你的右面";
 
-    
-    
-    self.usernameLabel.accessibilityFrame = self.usernameTextfield.frame;
-    self.usernameLabel.accessibilityLabel = usernameAccessibilityLabel;
-    self.usernameTextfield.accessibilityLabel = usernameAccessibilityLabel;
-    
-    self.passwordLabel.accessibilityFrame = self.passwordTextfield.frame;
-    self.passwordLabel.accessibilityLabel = passwordAccessibilityLabel;
-    self.passwordTextfield.accessibilityLabel = passwordAccessibilityLabel;
-    
-    self.loginButton.accessibilityLabel = loginButtonAccessibilityLabel;
-    self.signupButton.accessibilityLabel = signupButtonAccessibilityLabel;
+    NSString *loginButtonAccessibilityLabel = @"点击两次屏幕登录";
+    NSString *signupButtonAccessibilityLabel = @"点击两次屏幕注册";
 
-    [self.rememberPasswordSwitch setOn:NO];
-    self.rememberPasswordSwitch.accessibilityLabel = rememberPasswordSwitchAccessibilityLabel;
+    _usernameLabel.accessibilityLabel = usernameLabelAccessibilityLabel;
+    _usernameTextfield.accessibilityLabel = usernameTextFieldAccessibilityLabel;
+    _usernameTextfield.accessibilityHint = usernameTextFieldAccessibilityHint;
+    _usernameTextfield.accessibilityTraits = UIAccessibilityTraitNone;
+
+    _passwordLabel.accessibilityLabel = passwordLabelAccessibilityLabel;
+    _passwordTextfield.accessibilityLabel = passwordTextFeildAccessibilityLabel;
+    _passwordTextfield.accessibilityTraits = UIAccessibilityTraitNone;
+
+    _loginButton.accessibilityLabel = loginButtonAccessibilityLabel;
+    _signupButton.accessibilityLabel = signupButtonAccessibilityLabel;
+
+    [_rememberPasswordSwitch setOn:NO];
+    _rememberPasswordSwitch.accessibilityLabel = rememberPasswordSwitchAccessibilityLabel;
 }
 
 - (void)didReceiveMemoryWarning {
