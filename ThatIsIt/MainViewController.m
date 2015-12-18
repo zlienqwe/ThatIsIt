@@ -20,8 +20,8 @@
 
     NSString *poetryAccessibilityLabel;
     NSString *poetryInfo = @"这是一首诗, 诗的内容是:";
-    NSString *poetryContent = self.poetry.accessibilityValue;
-    poetryAccessibilityLabel = [NSString stringWithFormat:@"%@: %@", poetryInfo, poetryContent];
+    NSString *poetryContent = self.poetry.text;
+    poetryAccessibilityLabel = [NSString stringWithFormat:@"%@%@", poetryInfo, poetryContent];
     self.poetry.accessibilityLabel = poetryAccessibilityLabel;
 }
 
